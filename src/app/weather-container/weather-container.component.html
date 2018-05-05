@@ -1,0 +1,17 @@
+<div class="weather-container">
+  <header class="container-header">
+    <h1>Find your local weather</h1>
+    <div>
+      <input type="text" placeholder="Enter your zipcode" [(ngModel)]="zipInput">
+
+    </div>
+  </header>
+
+  <h1>{{zipInput}}</h1>
+  <div class="main-weather">
+    <div *ngFor="let item of weatherList">
+      <app-weather-details [location]="item"></app-weather-details>
+    </div>
+  </div>
+
+</div>
