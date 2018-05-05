@@ -13,7 +13,10 @@ export class WeatherContainerComponent implements OnInit {
   weatherList;
   cityWeather;
   cityData: string;
-  searchWeather(): void {
+  zipFail: boolean = false;
+  searchWeather() {
+    if (this.zipInput.length !== 5) return (this.zipFail = true);
+    this.zipFail = false;
     this.cityWeather = [];
     this.weatherService
       .getCityWeather(+this.zipInput)

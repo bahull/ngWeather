@@ -59,7 +59,28 @@ input {
 .flexed button .back {
   width: 30px;
 }
-
+.zipFail {
+  position: absolute;
+  top: 28%;
+  background: lightcoral;
+  font-size: 14px;
+  animation: disappear;
+  animation-duration: 6s;
+}
+@keyframes disappear {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 @media (max-width: 1000px) {
   .weather-container {
     width: 100vw;
