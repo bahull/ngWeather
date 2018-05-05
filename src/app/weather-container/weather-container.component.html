@@ -10,15 +10,15 @@
   </header>
 
   <h3 *ngIf="cityData">{{cityData}}</h3>
-  <div class="main-weather">
+  <div class="main-weather" [@arrival]="weatherList">
     <div *ngIf="!cityWeather" class="main-weather2">
-      <div *ngFor="let item of weatherList">
-        <app-weather-details [location]="item"></app-weather-details>
+      <div *ngFor=" let item of weatherList">
+        <app-weather-details [location]=" item "></app-weather-details>
       </div>
     </div>
-    <div *ngIf="cityWeather">
-      <div *ngFor="let item of cityWeather">
-        <app-city-forecast [city]="item"></app-city-forecast>
+    <div *ngIf="cityWeather ">
+      <div *ngFor="let item of cityWeather ">
+        <app-city-forecast [city]="item "></app-city-forecast>
       </div>
 
     </div>

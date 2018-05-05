@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from "@angular/core";
-
 @Component({
   selector: "app-weather-details",
   templateUrl: "./weather-details.component.html",
