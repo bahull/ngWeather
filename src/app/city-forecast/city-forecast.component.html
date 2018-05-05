@@ -1,0 +1,10 @@
+<div class="card">
+  <section class="list-items">
+    <div>{{city.dt_txt.split(" ")[0]}}</div>
+    <img src="http://openweathermap.org/img/w/{{city.weather[0].icon}}.png" alt="">
+  </section>
+  <section class="list-items">
+    <div class="temp-seperator">Min Temp:{{city.main.temp_min}}</div>
+    <div>Max Temp: {{city.main.temp_max}}</div>
+  </section>
+</div>

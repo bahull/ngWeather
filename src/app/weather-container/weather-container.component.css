@@ -14,11 +14,12 @@
 input {
   width: 40%;
   margin: 10px 0 10px;
-  position: relative;
-  left: 28%;
+  /* position: relative; */
+  /* left: 28%; */
   padding: 2px;
   text-align: center;
   border-radius: 2px;
+  height: 30px;
 }
 .container-header {
   display: block;
@@ -33,4 +34,36 @@ input {
   flex-direction: column;
   justify-content: space-around;
   overflow-y: scroll;
+
+  /* align-items: center; */
+}
+.flexed {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flexed button {
+  width: 40%;
+  height: 30px;
+  border-radius: 2px;
+  background: white;
+}
+
+@media (max-width: 1000px) {
+  .weather-container {
+    width: 100vw;
+    height: 100vh;
+    padding: 15px;
+    border-radius: 0px;
+  }
+  .main-weather {
+    height: 100%;
+    width: 80%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow-y: scroll;
+    /* align-items: center; */
+  }
 }

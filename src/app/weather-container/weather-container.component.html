@@ -1,16 +1,24 @@
 <div class="weather-container">
   <header class="container-header">
     <h1>Find your local weather</h1>
-    <div>
-      <input type="text" placeholder="Enter your zipcode" [(ngModel)]="zipInput">
-
-    </div>
+    <form class="flexed" (ngSubmit)="searchWeather()">
+      <input type="text" placeholder="Enter your zip code" [(ngModel)]="zipInput" name="zip">
+      <button (click)="searchWeather()">Search Weather</button>
+    </form>
   </header>
 
-  <h1>{{zipInput}}</h1>
+  <h3 *ngIf="cityData ">{{cityData}}</h3>
   <div class="main-weather">
-    <div *ngFor="let item of weatherList">
-      <app-weather-details [location]="item"></app-weather-details>
+    <div *ngIf="!cityWeather">
+      <div *ngFor="let item of weatherList">
+        <app-weather-details [location]="item"></app-weather-details>
+      </div>
+    </div>
+    <div *ngIf="cityWeather">
+      <div *ngFor="let item of cityWeather">
+        <app-city-forecast [city]="item"></app-city-forecast>
+      </div>
+
     </div>
   </div>
 

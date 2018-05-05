@@ -8,9 +8,10 @@ import { AppComponent } from "./app.component";
 import { WeatherContainerComponent } from "./weather-container/weather-container.component";
 import { HttpClient } from "selenium-webdriver/http";
 import { WeatherDetailsComponent } from './weather-details/weather-details.component';
+import { CityForecastComponent } from './city-forecast/city-forecast.component';
 
 @NgModule({
-  declarations: [AppComponent, WeatherContainerComponent, WeatherDetailsComponent],
+  declarations: [AppComponent, WeatherContainerComponent, WeatherDetailsComponent, CityForecastComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
