@@ -4,12 +4,13 @@
     <form class="flexed" (ngSubmit)="searchWeather()">
       <input type="text" placeholder="Enter your zip code" [(ngModel)]="zipInput" name="zip">
       <button (click)="searchWeather()">Search Weather</button>
+      <button (click)="clearResults()" class="back" *ngIf="cityWeather">Go back</button>
     </form>
   </header>
 
-  <h3 *ngIf="cityData ">{{cityData}}</h3>
+  <h3 *ngIf="cityData">{{cityData}}</h3>
   <div class="main-weather">
-    <div *ngIf="!cityWeather">
+    <div *ngIf="!cityWeather" class="main-weather2">
       <div *ngFor="let item of weatherList">
         <app-weather-details [location]="item"></app-weather-details>
       </div>

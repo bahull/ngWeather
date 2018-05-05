@@ -14,17 +14,27 @@ export class WeatherContainerComponent implements OnInit {
   cityWeather;
   cityData: string;
   searchWeather(): void {
+    this.cityWeather = [];
     this.weatherService
       .getCityWeather(+this.zipInput)
       .subscribe(cityWeather => {
         console.log(cityWeather);
         this.cityData = cityWeather.city.name;
         this.cityWeather = cityWeather.list.filter((curr, ind, arr) => {
-          return ind === arr.findIndex(next => next.dt_txt === curr.dt_txt);
+          return (
+            ind ===
+            cityWeather.list.findIndex(
+              next => next.dt_txt.split(" ")[0] === curr.dt_txt.split(" ")[0]
+            )
+          );
         });
         this.zipInput = "";
         console.log(this.cityWeather, "Hit!");
       });
+  }
+  clearResults(): void {
+    this.cityWeather = false;
+    this.cityData = "";
   }
   constructor(private weatherService: WeatherDataService) {}
   ngOnInit() {
