@@ -23,3 +23,20 @@
   flex-direction: column;
   justify-content: space-around;
 }
+
+@media (max-width: 1000px) {
+  .card {
+    width: 95%;
+    height: 180px;
+    margin: 10px 0 10px;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  .tempBottom {
+    margin-top: 20px;
+  }
+  img {
+    height: 100px;
+  }
+}
