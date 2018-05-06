@@ -18,7 +18,7 @@ export class WeatherDataService {
         catchError(this.handleError("getHeroes", []))
       );
   }
-  getCityWeather(zip: number) {
+  getCityWeather(zip: number): Observable<any> {
     return this.http
       .get(
         this.cityUrl +
