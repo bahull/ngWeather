@@ -57,7 +57,7 @@ input {
   background: lightcoral;
   font-size: 25px;
   animation: disappear;
-  animation-duration: 6s;
+  animation-duration: 3s;
   text-align: center;
 }
 @keyframes disappear {

@@ -50,7 +50,11 @@ export class WeatherContainerComponent implements OnInit {
   cityData: string;
   zipFail: boolean = false;
   searchWeather() {
-    if (this.zipInput.length !== 5) return (this.zipFail = true);
+    if (this.zipInput.length !== 5) {
+      this.zipFail = true;
+      setTimeout(() => (this.zipFail = false), 3000);
+      return;
+    }
     this.zipFail = false;
     this.cityWeather = [];
     this.weatherService
