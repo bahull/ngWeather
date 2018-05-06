@@ -14,6 +14,7 @@ export class WeatherDetailsComponent implements OnInit {
     "02n": "./assets/02n.png",
     "03d": "./assets/03d.png",
     "03n": "./assets/03n.png",
+    "04d": "./assets/04d.png",
     "04n": "./assets/04n.png",
     "09d": "./assets/09d.png",
     "09n": "./assets/09n.png",

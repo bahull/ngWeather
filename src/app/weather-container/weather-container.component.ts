@@ -20,7 +20,6 @@ import {
     trigger("arrival", [
       transition("* => *", [
         query(":enter", style({ opacity: 0 }), { optional: true }),
-
         query(
           ":enter",
           stagger("300ms", [
@@ -41,6 +40,30 @@ import {
         )
       ])
     ])
+    // trigger("departing", [
+    //   transition("* => void", [
+    //     query(":leave", style({ opacity: 1 }), { optional: true }),
+
+    //     query(
+    //       ":leave",
+    //       stagger("300ms", [
+    //         animate(
+    //           ".8s ease-in",
+    //           keyframes([
+    //             style({ opacity: 1, transform: "translateY(0)", offset: 0 }),
+    //             style({
+    //               opacity: 0.5,
+    //               transform: "translateY(35px)",
+    //               offset: 0.3
+    //             }),
+    //             style({ opacity: 0, transform: "translateY()", offset: 1 })
+    //           ])
+    //         )
+    //       ]),
+    //       { optional: true }
+    //     )
+    //   ])
+    // ])
   ]
 })
 export class WeatherContainerComponent implements OnInit {
@@ -61,6 +84,7 @@ export class WeatherContainerComponent implements OnInit {
       .getCityWeather(+this.zipInput)
       .subscribe(cityWeather => {
         this.cityData = cityWeather.city.name;
+
         this.cityWeather = cityWeather.list.filter((curr, ind, arr) => {
           return (
             ind ===
@@ -69,6 +93,7 @@ export class WeatherContainerComponent implements OnInit {
             )
           );
         });
+        console.log(this.cityWeather);
         this.zipInput = "";
       });
   }
@@ -80,6 +105,7 @@ export class WeatherContainerComponent implements OnInit {
   ngOnInit() {
     this.weatherService.getAllWeather().subscribe(resp => {
       this.weatherList = resp.list;
+      console.log(this.weatherList);
     });
   }
 }
