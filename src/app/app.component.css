@@ -15,12 +15,3 @@
   justify-content: center;
   align-items: center;
 }
-
-.snowflake {
-  color: #fff;
-  font-size: 1em;
-  font-family: Arial;
-  text-shadow: 0 0 1px #000;
-  position: relative;
-  z-index: -5;
-}

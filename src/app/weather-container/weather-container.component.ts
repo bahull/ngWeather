@@ -56,7 +56,6 @@ export class WeatherContainerComponent implements OnInit {
     this.weatherService
       .getCityWeather(+this.zipInput)
       .subscribe(cityWeather => {
-        console.log("cityWeather: ", cityWeather);
         this.cityData = cityWeather.city.name;
         this.cityWeather = cityWeather.list.filter((curr, ind, arr) => {
           return (
@@ -67,7 +66,6 @@ export class WeatherContainerComponent implements OnInit {
           );
         });
         this.zipInput = "";
-        console.log(this.cityWeather);
       });
   }
   clearResults(): void {
@@ -78,7 +76,6 @@ export class WeatherContainerComponent implements OnInit {
   ngOnInit() {
     this.weatherService.getAllWeather().subscribe(resp => {
       this.weatherList = resp.list;
-      console.log("resp: ", resp);
     });
   }
 }
