@@ -1,10 +1,10 @@
 <div class="card">
   <section class="list-items">
     <div>{{location.name}}</div>
-    <img src="http://openweathermap.org/img/w/{{location.weather[0].icon}}.png" alt="">
+    <img src="{{weatherIcons[location.weather[0].icon]}}" alt="">
   </section>
   <section class="list-items">
-    <div class="temp-seperator">Min Temp:{{location.main.temp_min}}</div>
-    <div class="tempBottom">Max Temp: {{location.main.temp_max}}</div>
+    <div class="temp-seperator">Average Temp: {{((location.main.temp_min + location.main.temp_max) / 2).toFixed(2)}}</div>
+    <!-- <div class="tempBottom">Max Temp: {{location.main.temp_max}}</div> -->
   </section>
 </div>

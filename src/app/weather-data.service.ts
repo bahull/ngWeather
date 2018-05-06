@@ -8,8 +8,8 @@ import { Observable, of } from "rxjs";
 })
 export class WeatherDataService {
   constructor(private http: HttpClient) {}
-  cityUrl: string = "http://api.openweathermap.org/data/2.5/forecast?zip=";
-  configUrl: string = "http://api.openweathermap.org/data/2.5/group?id=5128638,4190598,4410836&units=imperial&APPID=e383bdaf1cc19b1db4db82864b7913d3";
+  cityUrl: string = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?zip=";
+  configUrl: string = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/group?id=5128638,4190598,4410836&units=imperial&APPID=e383bdaf1cc19b1db4db82864b7913d3";
   getAllWeather(): Observable<any> {
     return this.http
       .get(this.configUrl)

@@ -27,7 +27,7 @@
 @media (max-width: 1000px) {
   .card {
     width: 95%;
-    height: 180px;
+    height: 135px;
     margin: 10px 0 10px;
     display: flex;
     justify-content: space-around;

@@ -67,6 +67,7 @@ export class WeatherContainerComponent implements OnInit {
           );
         });
         this.zipInput = "";
+        console.log(this.cityWeather);
       });
   }
   clearResults(): void {
