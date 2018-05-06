@@ -3,11 +3,11 @@
     <h1>Find your local weather</h1>
     <form class="flexed" (ngSubmit)="searchWeather()">
       <input type="text" placeholder="Enter your zip code" [(ngModel)]="zipInput" name="zip" autocomplete="off" required>
-      <p class="zipFail" *ngIf="zipFail">Invalid zip code format</p>
       <button id="margBottom" (click)="searchWeather()">Search Weather</button>
       <button (click)="clearResults()" class="back" *ngIf="cityWeather">Go back</button>
     </form>
   </header>
+  <p class="zipFail" *ngIf="zipFail">Invalid zip code format</p>
 
   <h3 *ngIf="cityData">{{cityData}}</h3>
   <div class="main-weather" [@arrival]="weatherList">

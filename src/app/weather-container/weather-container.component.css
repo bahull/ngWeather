@@ -52,11 +52,13 @@ input {
 }
 .zipFail {
   position: absolute;
-  top: 28%;
+  bottom: 0px;
+  width: 50vw;
   background: lightcoral;
-  font-size: 14px;
+  font-size: 25px;
   animation: disappear;
   animation-duration: 6s;
+  text-align: center;
 }
 @keyframes disappear {
   0% {
@@ -89,13 +91,7 @@ input {
     flex-direction: column;
   }
   .zipFail {
-    position: absolute;
-    top: 22%;
-    right: 6%;
-    background: lightcoral;
-    font-size: 25px;
-    animation: disappear;
-    animation-duration: 6s;
+    font-size: 20px;
   }
   .flexed:nth-child(3) {
     margin-bottom: 10px;
@@ -140,13 +136,7 @@ input {
     flex-direction: column;
   }
   .zipFail {
-    position: absolute;
-    top: 15%;
-    right: 33%;
-    background: lightcoral;
     font-size: 15px;
-    animation: disappear;
-    animation-duration: 6s;
   }
   .flexed:nth-child(3) {
     margin-bottom: 10px;
